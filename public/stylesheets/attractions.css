@@ -1,0 +1,47 @@
+body{
+    background-color: rgb(192, 224, 104);
+  }
+  ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:rgba(255, 255, 255, 0.8);
+  }
+  li{
+    float: left;
+  }
+  li:last-child {
+    border-right: none;
+  }
+  li a{
+    color: black;
+    padding: 20px 50px;
+    text-align: center;
+    text-decoration: none;
+  }
+  li a:hover:not(.active) {
+    background-color:rgb(97, 117, 39);
+  }  
+  .active {
+  background-color:rgb(114, 150, 16);
+  color:white;
+  }
+  h1{
+      color:black;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: rgb(114, 150, 16);
+    padding: 10px;
+  }
+  .grid-item {
+    background-color: rgb(164, 199, 70);
+    border: 1px solid rgba(219, 243, 219, 0.8);
+    text-align: center;
+  }
+  .atr_img{
+      width:420px;
+      height:250px;
+  }

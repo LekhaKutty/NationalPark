@@ -1,0 +1,85 @@
+body{
+    background-color: rgba(255, 255, 255, 0.8);
+}
+h1,h2{
+    color:black;
+
+}
+p{
+    font-size: 20px;
+
+}
+.main{
+    position: relative;;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:rgb(164, 199, 70);
+}
+li{
+    float: left;
+}
+li:last-child {
+    border-right: none;
+}
+li a{
+    color: black;
+    padding: 20px 50px;
+    text-align: center;
+    text-decoration: none;
+}
+li a:hover:not(.active) {
+    background-color:rgb(97, 117, 39);
+}  
+.active {
+background-color:rgb(114, 150, 16);
+color:white;
+}
+.left-container,.right-container{
+    position: absolute;
+}
+.left-container{
+    display:flex;
+    width: 50%;
+    left: 0;
+    text-align: left;
+}
+.right-container{
+    width: 50%;
+    right:0;
+    word-wrap: break-word;
+    text-align: justify;
+    background-color: rgba(255, 255, 255, 0.8);
+    height:445px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.right-container p,h2{
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.slide_img{
+    width: 100%;
+    
+    vertical-align: bottom;
+}
+.grid_pic {
+    display: grid;
+    margin-top: 500px;
+    top:500px;
+    grid-template-areas: 'myArea myArea myArea';
+    grid-gap: 10px;
+    background-color: rgb(114, 150, 16);
+    padding: 10px;
+}
+.grid_pic div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 20px;
+}
+.grid_image{
+    border-radius: 50%;
+}
