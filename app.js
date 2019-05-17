@@ -30,13 +30,16 @@ app.get("/blog",(req,res)=>{
 })
 /*sample part*/
 app.get("/sampleblog",(req,res)=>{
-    fs.readFile("public/json_file/comments.json", 'utf-8', function (err, data) {
+    fs.readFile("public/json_file/blog1.json", 'utf-8', function (err, data) {
         if (err) {
           throw err;
         }
         console.log(data);
+        
         const json_obj = JSON.parse(data);
         console.log(json_obj.blogs.length);
+        console.log(json_obj.blogpage[0].heading);
+        console.log(json_obj.blogs[0].comment);
         res.render("sampleblog",{data:json_obj});
     });
 })
