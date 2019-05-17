@@ -25,15 +25,22 @@ app.get("/blog",(req,res)=>{
         console.log(data);
         const json_obj = JSON.parse(data);
         console.log(json_obj.blogs.length);
-        //console.log(json_obj.blogs[1].comment);
-        /*let l = json_obj.blogs.length;
-        for(let i = 0;i<l;i++){
-
-        }*/
         res.render("blog",{data:json_obj});
     });
-    //res.render("blog");
 })
+/*sample part*/
+app.get("/sampleblog",(req,res)=>{
+    fs.readFile("public/json_file/comments.json", 'utf-8', function (err, data) {
+        if (err) {
+          throw err;
+        }
+        console.log(data);
+        const json_obj = JSON.parse(data);
+        console.log(json_obj.blogs.length);
+        res.render("sampleblog",{data:json_obj});
+    });
+})
+/*sample part end*/
 app.post("/blog",(req,res)=>{
     fs.readFile("public/json_file/comments.json", 'utf-8', function (err, data) {
         if (err) {
