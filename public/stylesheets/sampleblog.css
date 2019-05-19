@@ -61,14 +61,12 @@ text-align: center;
 width: 75%;
 float:right;
 font-size: 20px;
-margin
 }
 .heading,.para_blog,.input_blog,.image_blog{
-display: inline-block;
-text-align: justify;
+    display: inline-block;
+    text-align: justify;
 }
 input[type=text],textarea {
-
 padding: 12px 20px;
 margin: 8px 0;
 display: inline-block;

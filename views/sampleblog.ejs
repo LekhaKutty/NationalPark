@@ -23,7 +23,7 @@
     <div class="container">
         <div class="heading"><h3><%= data.blogpage[0].heading %></h3></div>
         <div class="para_blog"><p><%= data.blogpage[0].para1 %></p></div>
-        <div class="image_blog" ><img class="blog_img" ><%= data.blogpage[0].imglocation %></div>
+        <div class="image_blog" ><img class="blog_img" src= <%= data.blogpage[0].imglocation %>></div>
         <div class="para_blog"><p><%= data.blogpage[0].para2 %></p></div>
         <div class="image_blog" ><img class="blog_img" src = "images/blog2.jpg"></div>
         <br>
@@ -36,9 +36,9 @@
             </form>
         </div>
         <div class="show_comments">
-                <% for(let i=0; i < data.blogs.length; i++) {%>
-                    <p class="owner"><%= data.blogs[i].name %></p>
-                    <div class="commt"></h4><%= data.blogs[i].comment %></div>
+                <% for(let i=0; i < data.comments.length; i++) {%>
+                    <p class="owner"><%= data.comments[i].name %></p>
+                    <div class="commt"></h4><%= data.comments[i].comment %></div>
                 <% } %>
         </div>
     </div>
