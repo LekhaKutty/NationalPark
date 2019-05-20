@@ -37,20 +37,6 @@ app.get("/blog",(req,res)=>{
           res.render("blogslist",{data:json_obj});
     })
 });
-/*app.get("/sampleblog",(req,res)=>{
-    console.log(req.body);
-    /*fs.readFile("public/json_file/blog1.json", 'utf-8', function (err, data) {
-        if (err) {
-          throw err;
-        }
-        console.log(data);
-        
-        const json_obj = JSON.parse(data);
-        console.log(json_obj.comments.length);
-        console.log(json_obj.blogpage[0].heading);
-        console.log(json_obj.comments[0].comment);
-        res.render("sampleblog");
-    });*/
 app.post("/blog",(req,res)=>{
     console.log(req.body.file);
     let file_name = req.body.file;
@@ -61,7 +47,6 @@ app.post("/blog",(req,res)=>{
         }
         console.log(data);
         const jsonParsed = JSON.parse(data);
-        //console.log(jsonParsed.comments.length);
         jsonParsed.comments = [...jsonParsed.comments,req.body];
         const comment_string =JSON.stringify(jsonParsed);
         fs.writeFile("public/json_file/" + file_name,comment_string, function(err) {
@@ -73,74 +58,5 @@ app.post("/blog",(req,res)=>{
     });
     res.redirect("/blog");
 })
-/*sample part*/
-/*app.get("/sampleblog",(req,res)=>{
-    fs.readFile("public/json_file/blog1.json", 'utf-8', function (err, data) {
-        if (err) {
-          throw err;
-        }
-        console.log(data);
-        
-        const json_obj = JSON.parse(data);
-        console.log(json_obj.comments.length);
-        console.log(json_obj.blogpage[0].heading);
-        console.log(json_obj.comments[0].comment);
-        res.render("sampleblog",{data:json_obj});
-    });
-})*/
-/*app.get("/sampleblog",(req,res)=>{
-    fs.readFile("public/json_file/example.json", 'utf-8', function (err, data) {
-        if (err) {
-          throw err;
-        }
-        //console.log(data);
-        
-        const json_obj = JSON.parse(data);
-        //console.log(json_obj.comments.length);
-        console.log(json_obj.blogpage[0].one.heading);
-        console.log(json_obj.blogpage[1].two.heading);
-        console.log(json_obj.blogpage[0].comments[0].comment);
-        console.log(json_obj.blogpage[1].comments[0].comment);
-        //console.log(json_obj.comments[0].comment);
-        res.render("sampleblog",{data:json_obj});
-    });
-})*/
-/*sample part end*/
-/*app.post("/sampleblog",(req,res)=>{
-    fs.readFile("public/json_file/blog1.json", 'utf-8', function (err, data) {
-        if (err) {
-          throw err;
-        }
-        console.log(data);
-        const jsonParsed = JSON.parse(data);
-        jsonParsed.comments = [...jsonParsed.comments,req.body];
-        const comment_string =JSON.stringify(jsonParsed);
-        fs.writeFile("public/json_file/blog1.json",comment_string, function(err) {
-        if (err) {console.log(err);}
-        });
-            
-        console.log(req.body);
-        console.log(comment_string);
-    });
-    res.redirect("/sampleblog");
-})*//*
-app.post("/sampleblog",(req,res)=>{
-    fs.readFile("public/json_file/blog1.json", 'utf-8', function (err, data) {
-        if (err) {
-          throw err;
-        }
-        console.log(data);
-        const jsonParsed = JSON.parse(data);
-        jsonParsed.blogpage[1].comments = [...jsonParsed.comments,req.body];
-        const comment_string =JSON.stringify(jsonParsed);
-        fs.writeFile("public/json_file/blog1.json",comment_string, function(err) {
-        if (err) {console.log(err);}
-        });
-            
-        console.log(req.body);
-        console.log(comment_string);
-    });
-    res.redirect("/sampleblog");
-})*/
 console.log("Listening to port 5000");
 app.listen(5000);

@@ -9,7 +9,7 @@ ody{
     background-color:rgb(164, 199, 70);
 }
 #horizontal li{
-    float: right;
+   float:right;
 }
 #horizontal li:last-child {
     border-right: none;
@@ -119,10 +119,11 @@ text-align: left;
 .commt{
 background-color:white;
 /* border: 1px solid rgb(114, 150, 16);*/
-text-align: justify;
+text-align: left;
 font-size: 16px;
 padding: 6px;
-margin:4px;
+font-style: italic;
+
 }
 .owner{
 font-style: italic;
