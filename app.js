@@ -28,6 +28,15 @@ app.get('/attractions',(req,res) => {
         res.render("blog",{data:json_obj});
     });
 })*/
+
+app.get("/blogs", (req, res) => {
+    console.log(req.query.file);
+    fs.readFile("public/json_file/" + req.query.file, 'utf-8', function(err, data) {
+        const json_obj = JSON.parse(data);
+        res.json(json_obj);
+    })
+})
+
 app.get("/blog",(req,res)=>{
     fs.readFile("public/json_file/lists.json",'utf-8', function (err, data){
         if (err) {
