@@ -1,4 +1,4 @@
-ody{
+body{
     background-color:rgba(255, 255, 255, 0.8);
   }
 #horizontal ul{
@@ -9,7 +9,7 @@ ody{
     background-color:rgb(164, 199, 70);
 }
 #horizontal li{
-   float:right;
+   float:left;
 }
 #horizontal li:last-child {
     border-right: none;

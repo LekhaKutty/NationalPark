@@ -17,20 +17,9 @@ app.get('/',(req,res) => {
 app.get('/attractions',(req,res) => {
     res.render("attractions");
 })
-/*app.get("/blog",(req,res)=>{
-    fs.readFile("public/json_file/comments.json", 'utf-8', function (err, data) {
-        if (err) {
-          throw err;
-        }
-        console.log(data);
-        const json_obj = JSON.parse(data);
-        console.log(json_obj.comments.length);
-        res.render("blog",{data:json_obj});
-    });
-})*/
 
 app.get("/blogs", (req, res) => {
-    console.log(req.query.file);
+    //console.log(req.query.file);
     fs.readFile("public/json_file/" + req.query.file, 'utf-8', function(err, data) {
         const json_obj = JSON.parse(data);
         res.json(json_obj);
@@ -66,6 +55,23 @@ app.post("/blog",(req,res)=>{
         console.log(comment_string);
     });
     res.redirect("/blog");
+});
+
+app.get("/postblog",(req,res)=>{
+    res.render("postblog");
+})
+
+app.post("/postblog",(req,res)=>{
+    console.log(req.body);
+    let string_json = JSON.stringify(req.body);
+    fs.writeFile("post_file.json",string_json, (err) => {
+        if (err) {
+            console.error(err);
+            return;
+        };
+        console.log("File has been created");
+    });
+    res.redirect('/blog');
 })
 console.log("Listening to port 5000");
 app.listen(5000);
